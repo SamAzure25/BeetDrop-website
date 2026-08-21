@@ -1,0 +1,784 @@
+/* =========================================================
+   BEETDROP
+   ABOUT PAGE
+   Responsive Styles
+========================================================= */
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .about-hero-container {
+        grid-template-columns: 1fr 0.9fr;
+
+        gap: 50px;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(54px, 7vw, 78px);
+    }
+
+    .about-hero-visual {
+        min-height: 440px;
+    }
+
+    .hero-orbit {
+        width: 350px;
+        height: 350px;
+    }
+
+    .orbit-two {
+        width: 275px;
+        height: 275px;
+    }
+
+    .hero-center {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-floating-card-one {
+        left: -10px;
+    }
+
+    .hero-floating-card-two {
+        right: -10px;
+    }
+
+    .story-layout {
+        gap: 65px;
+    }
+
+    .mission-card {
+        gap: 55px;
+
+        padding: 65px;
+    }
+
+    .vision-layout {
+        gap: 60px;
+    }
+
+    .values-grid,
+    .connect-grid {
+        gap: 18px;
+    }
+
+    .value-card,
+    .connect-card {
+        padding: 32px;
+    }
+
+    .final-cta-box {
+        padding: 75px 55px;
+    }
+
+    .final-cta-decoration {
+        opacity: 0.7;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .story-section,
+    .mission-section,
+    .values-section,
+    .vision-section,
+    .connect-section {
+        padding: 90px 0;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .about-hero {
+        min-height: auto;
+
+        padding: 90px 0 100px;
+    }
+
+    .about-hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 65px;
+    }
+
+    .about-hero-content {
+        max-width: 760px;
+    }
+
+    .about-hero h1 {
+        max-width: 700px;
+    }
+
+    .about-hero-content > p {
+        max-width: 650px;
+    }
+
+    .about-hero-visual {
+        min-height: 430px;
+    }
+
+
+    /* =====================================================
+       STORY
+    ===================================================== */
+
+    .story-layout {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .section-label-block {
+        display: block;
+
+        padding: 0;
+    }
+
+    .section-index {
+        display: none;
+    }
+
+    .story-content {
+        max-width: 760px;
+    }
+
+
+    /* =====================================================
+       MISSION
+    ===================================================== */
+
+    .mission-card {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 60px;
+    }
+
+    .mission-side {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 20px;
+    }
+
+    .mission-word {
+        border-bottom: none;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+
+    /* =====================================================
+       VALUES
+    ===================================================== */
+
+    .values-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .value-card {
+        min-height: 300px;
+    }
+
+    .value-top {
+        margin-bottom: 45px;
+    }
+
+
+    /* =====================================================
+       VISION
+    ===================================================== */
+
+    .vision-layout {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .vision-visual {
+        min-height: 420px;
+
+        order: 2;
+    }
+
+    .vision-content {
+        order: 1;
+
+        max-width: 760px;
+    }
+
+
+    /* =====================================================
+       CONNECT
+    ===================================================== */
+
+    .connect-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .connect-card {
+        min-height: 300px;
+    }
+
+
+    /* =====================================================
+       FINAL CTA
+    ===================================================== */
+
+    .about-final-cta {
+        padding: 90px 0;
+    }
+
+    .final-cta-box {
+        padding: 65px 50px;
+    }
+
+    .final-cta-decoration {
+        right: -220px;
+
+        opacity: 0.5;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .story-section,
+    .mission-section,
+    .values-section,
+    .vision-section,
+    .connect-section {
+        padding: 75px 0;
+    }
+
+
+    /* =====================================================
+       EYEBROWS
+    ===================================================== */
+
+    .about-hero .eyebrow,
+    .story-section .eyebrow,
+    .mission-section .eyebrow,
+    .values-section .eyebrow,
+    .vision-section .eyebrow,
+    .connect-section .eyebrow,
+    .about-final-cta .eyebrow {
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .about-hero {
+        padding: 75px 0 85px;
+    }
+
+    .about-hero-container {
+        gap: 45px;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(46px, 14vw, 65px);
+
+        line-height: 1;
+    }
+
+    .about-hero-content > p {
+        margin-top: 24px;
+
+        font-size: 16px;
+    }
+
+    .about-hero-visual {
+        min-height: 340px;
+    }
+
+    .hero-orbit {
+        width: 285px;
+        height: 285px;
+    }
+
+    .orbit-two {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-center {
+        width: 185px;
+        height: 185px;
+
+        padding: 20px;
+    }
+
+    .hero-center strong {
+        font-size: 22px;
+    }
+
+    .hero-center-label {
+        font-size: 8px;
+    }
+
+    .hero-center > span:last-child {
+        margin-top: 7px;
+
+        font-size: 9px;
+    }
+
+    .hero-floating-card {
+        min-width: 155px;
+
+        padding: 11px 13px;
+
+        gap: 9px;
+    }
+
+    .hero-floating-card-one {
+        top: 25px;
+        left: -4px;
+    }
+
+    .hero-floating-card-two {
+        right: -4px;
+        bottom: 25px;
+    }
+
+    .about-floating-number {
+        width: 32px;
+        height: 32px;
+
+        border-radius: 9px;
+
+        font-size: 9px;
+    }
+
+    .hero-floating-card strong {
+        font-size: 12px;
+    }
+
+    .hero-floating-card div span {
+        font-size: 9px;
+    }
+
+
+    /* =====================================================
+       STORY
+    ===================================================== */
+
+    .story-layout {
+        gap: 30px;
+    }
+
+    .story-content h2 {
+        font-size: 42px;
+    }
+
+    .story-content .large-text {
+        font-size: 17px;
+    }
+
+    .story-content p {
+        font-size: 15px;
+    }
+
+    .story-highlight {
+        align-items: flex-start;
+
+        padding: 17px;
+    }
+
+    .highlight-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* =====================================================
+       MISSION
+    ===================================================== */
+
+    .mission-card {
+        gap: 35px;
+
+        padding: 45px 30px;
+
+        border-radius: 25px;
+    }
+
+    .mission-content h2 {
+        font-size: 42px;
+    }
+
+    .mission-content p {
+        font-size: 15px;
+    }
+
+    .mission-side {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .mission-word {
+        padding: 15px 0;
+
+        font-size: 11px;
+    }
+
+
+    /* =====================================================
+       VALUES
+    ===================================================== */
+
+    .section-heading.centered {
+        margin-bottom: 45px;
+    }
+
+    .section-heading.centered h2 {
+        font-size: 42px;
+    }
+
+    .section-heading.centered p {
+        font-size: 15px;
+    }
+
+    .value-card {
+        min-height: auto;
+
+        padding: 30px;
+    }
+
+    .value-top {
+        margin-bottom: 40px;
+    }
+
+    .value-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .value-card h3 {
+        font-size: 25px;
+    }
+
+    .value-card p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       VISION
+    ===================================================== */
+
+    .vision-layout {
+        gap: 40px;
+    }
+
+    .vision-content h2 {
+        font-size: 42px;
+    }
+
+    .vision-content .large-text {
+        font-size: 17px;
+    }
+
+    .vision-content > p:not(.large-text) {
+        font-size: 15px;
+    }
+
+    .vision-visual {
+        min-height: 330px;
+    }
+
+    .vision-visual::before {
+        width: 290px;
+        height: 290px;
+    }
+
+    .vision-visual::after {
+        width: 215px;
+        height: 215px;
+    }
+
+    .vision-circle {
+        width: 155px;
+        height: 155px;
+
+        padding: 18px;
+    }
+
+    .vision-circle strong {
+        font-size: 20px;
+    }
+
+    .vision-circle span {
+        font-size: 7px;
+    }
+
+    .vision-dot-one {
+        top: 45px;
+        right: calc(50% - 100px);
+    }
+
+    .vision-dot-two {
+        bottom: 55px;
+        left: calc(50% - 105px);
+    }
+
+
+    /* =====================================================
+       CONNECT
+    ===================================================== */
+
+    .connect-section .section-heading.centered {
+        margin-bottom: 45px;
+    }
+
+    .connect-card {
+        min-height: auto;
+
+        padding: 30px;
+    }
+
+    .connect-icon {
+        margin-top: 28px;
+    }
+
+    .connect-card h3 {
+        font-size: 25px;
+    }
+
+    .connect-card p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       FINAL CTA
+    ===================================================== */
+
+    .about-final-cta {
+        padding: 75px 0;
+    }
+
+    .final-cta-box {
+        padding: 50px 28px;
+
+        border-radius: 25px;
+    }
+
+    .final-cta-content h2 {
+        font-size: 44px;
+
+        line-height: 1.02;
+    }
+
+    .final-cta-content > p {
+        font-size: 15px;
+    }
+
+    .final-cta-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+    }
+
+    .final-cta-actions .btn {
+        width: 100%;
+    }
+
+    .final-cta-decoration {
+        right: -280px;
+
+        opacity: 0.35;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .story-section,
+    .mission-section,
+    .values-section,
+    .vision-section,
+    .connect-section {
+        padding: 65px 0;
+    }
+
+
+    /* HERO */
+
+    .about-hero {
+        padding: 65px 0 75px;
+    }
+
+    .about-hero h1 {
+        font-size: 45px;
+    }
+
+    .about-hero-visual {
+        min-height: 290px;
+    }
+
+    .hero-orbit {
+        width: 245px;
+        height: 245px;
+    }
+
+    .orbit-two {
+        width: 190px;
+        height: 190px;
+    }
+
+    .hero-center {
+        width: 160px;
+        height: 160px;
+    }
+
+    .hero-center strong {
+        font-size: 19px;
+    }
+
+    .hero-center > span:last-child {
+        font-size: 8px;
+    }
+
+    .hero-floating-card {
+        min-width: 135px;
+
+        padding: 9px 10px;
+    }
+
+    .hero-floating-card-one {
+        left: -8px;
+    }
+
+    .hero-floating-card-two {
+        right: -8px;
+    }
+
+
+    /* STORY */
+
+    .story-content h2 {
+        font-size: 37px;
+    }
+
+    .story-highlight {
+        gap: 11px;
+    }
+
+    .story-highlight strong {
+        font-size: 13px;
+    }
+
+    .story-highlight div span {
+        font-size: 11px;
+    }
+
+
+    /* MISSION */
+
+    .mission-card {
+        padding: 38px 24px;
+    }
+
+    .mission-content h2 {
+        font-size: 37px;
+    }
+
+
+    /* VALUES */
+
+    .section-heading.centered h2 {
+        font-size: 37px;
+    }
+
+    .value-card {
+        padding: 26px;
+    }
+
+
+    /* VISION */
+
+    .vision-content h2 {
+        font-size: 37px;
+    }
+
+    .vision-visual {
+        min-height: 280px;
+    }
+
+    .vision-visual::before {
+        width: 245px;
+        height: 245px;
+    }
+
+    .vision-visual::after {
+        width: 185px;
+        height: 185px;
+    }
+
+    .vision-circle {
+        width: 135px;
+        height: 135px;
+    }
+
+    .vision-circle strong {
+        font-size: 17px;
+    }
+
+
+    /* CONNECT */
+
+    .connect-card {
+        padding: 26px;
+    }
+
+    .connect-card h3 {
+        font-size: 23px;
+    }
+
+
+    /* CTA */
+
+    .final-cta-box {
+        padding: 42px 22px;
+    }
+
+    .final-cta-content h2 {
+        font-size: 38px;
+    }
+
+    .final-cta-content > p {
+        font-size: 14px;
+    }
+}

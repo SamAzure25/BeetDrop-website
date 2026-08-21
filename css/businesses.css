@@ -1,0 +1,2862 @@
+/* =========================================================
+   BEETDROP
+   BUSINESSES PAGE STYLES
+   ========================================================= */
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+    --business-purple: #5b21b6;
+    --business-purple-dark: #3b0d8f;
+    --business-purple-deep: #2e075f;
+    --business-purple-light: #f3edff;
+
+    --business-orange: #ff7a00;
+    --business-orange-light: #fff3e6;
+
+    --business-black: #17131f;
+    --business-text: #4b4654;
+    --business-muted: #746e7e;
+
+    --business-white: #ffffff;
+    --business-background: #faf8fd;
+
+    --business-border: #e9e4ef;
+
+    --business-radius: 24px;
+    --business-radius-lg: 34px;
+
+    --business-shadow:
+        0 20px 60px rgba(45, 17, 87, 0.08);
+
+    --business-shadow-hover:
+        0 30px 80px rgba(45, 17, 87, 0.14);
+
+    --business-container: 1240px;
+}
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+.businesses-page {
+    margin: 0;
+    padding: 0;
+
+    background: var(--business-white);
+    color: var(--business-black);
+
+    overflow-x: hidden;
+}
+
+.businesses-page *,
+.businesses-page *::before,
+.businesses-page *::after {
+    box-sizing: border-box;
+}
+
+.businesses-page a {
+    text-decoration: none;
+}
+
+.businesses-page button,
+.businesses-page input {
+    font: inherit;
+}
+
+.businesses-page img {
+    max-width: 100%;
+    display: block;
+}
+
+.businesses-page p {
+    color: var(--business-text);
+    line-height: 1.8;
+}
+
+/* =========================================================
+   PAGE CONTAINER
+   ========================================================= */
+
+.businesses-page .container {
+    width: min(
+        calc(100% - 48px),
+        var(--business-container)
+    );
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.businesses-page .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid var(--business-border);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.businesses-page .nav-container {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+}
+
+.businesses-page .brand {
+    display: inline-flex;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.businesses-page .brand-name {
+    color: var(--business-purple);
+
+    font-size: 25px;
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+}
+
+.businesses-page .main-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 26px;
+
+    margin-left: auto;
+}
+
+.businesses-page .nav-link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 30px 0;
+
+    color: #57515f;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease;
+}
+
+.businesses-page .nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 20px;
+
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: var(--business-orange);
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition:
+        transform 0.25s ease;
+}
+
+.businesses-page .nav-link:hover {
+    color: var(--business-purple);
+}
+
+.businesses-page .nav-link:hover::after,
+.businesses-page .nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.businesses-page .nav-link.active {
+    color: var(--business-purple);
+}
+
+.businesses-page .nav-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-left: 8px;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.businesses-page .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+
+    padding: 0 20px;
+
+    border: 1px solid transparent;
+    border-radius: 11px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.businesses-page .btn:hover {
+    transform: translateY(-2px);
+}
+
+.businesses-page .nav-actions .btn {
+    min-height: 42px;
+
+    padding: 0 19px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+}
+
+.businesses-page .btn-primary {
+    color: #ffffff;
+
+    background: var(--business-purple);
+
+    border-color: var(--business-purple);
+
+    box-shadow:
+        0 8px 20px rgba(91, 33, 182, 0.18);
+}
+
+.businesses-page .btn-primary:hover {
+    background: var(--business-purple-dark);
+
+    border-color: var(--business-purple-dark);
+
+    box-shadow:
+        0 12px 25px rgba(91, 33, 182, 0.25);
+}
+
+.businesses-page .btn-outline {
+    color: var(--business-purple);
+
+    background: transparent;
+
+    border-color: rgba(91, 33, 182, 0.30);
+}
+
+.businesses-page .btn-outline:hover {
+    color: var(--business-purple);
+
+    background: var(--business-purple-light);
+
+    border-color: var(--business-purple);
+}
+
+.businesses-page .btn-large {
+    min-height: 54px;
+
+    padding: 0 27px;
+
+    border-radius: 14px;
+
+    font-size: 14px;
+}
+
+.businesses-page .btn-light {
+    color: var(--business-purple);
+
+    background: #ffffff;
+
+    border-color: #ffffff;
+}
+
+.businesses-page .btn-light:hover {
+    background: #f8f5ff;
+}
+
+.businesses-page .btn-outline-light {
+    color: #ffffff;
+
+    background: transparent;
+
+    border-color: rgba(255, 255, 255, 0.30);
+}
+
+.businesses-page .btn-outline-light:hover {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-color: #ffffff;
+}
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.businesses-page .mobile-menu-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 9px;
+
+    border: 1px solid var(--business-border);
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+}
+
+.businesses-page .mobile-menu-toggle span {
+    display: block;
+
+    width: 100%;
+    height: 2px;
+
+    margin: 5px 0;
+
+    background: var(--business-purple);
+
+    border-radius: 10px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.business-hero {
+    position: relative;
+
+    min-height: 720px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 110px 0 120px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 82% 15%,
+            rgba(255, 122, 0, 0.13),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 10% 85%,
+            rgba(91, 33, 182, 0.10),
+            transparent 32%
+        ),
+
+        #ffffff;
+}
+
+.business-hero-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.business-hero-glow.glow-one {
+    width: 520px;
+    height: 520px;
+
+    top: -280px;
+    right: -180px;
+
+    background: rgba(91, 33, 182, 0.05);
+}
+
+.business-hero-glow.glow-two {
+    width: 380px;
+    height: 380px;
+
+    bottom: -220px;
+    left: -170px;
+
+    background: rgba(255, 122, 0, 0.06);
+}
+
+.business-hero-container {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    align-items: center;
+
+    gap: 85px;
+}
+
+.business-hero-content {
+    max-width: 720px;
+}
+
+.business-eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+
+    color: var(--business-orange);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+.business-eyebrow::before {
+    content: "";
+
+    width: 30px;
+    height: 3px;
+
+    border-radius: 20px;
+
+    background: var(--business-orange);
+}
+
+.business-hero h1 {
+    margin: 0;
+
+    max-width: 760px;
+
+    color: var(--business-black);
+
+    font-size: clamp(56px, 7vw, 88px);
+
+    font-weight: 800;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
+}
+
+.business-hero h1 span {
+    color: var(--business-purple);
+}
+
+.business-hero-content > p {
+    max-width: 640px;
+
+    margin: 32px 0 0;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+}
+
+.business-hero-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 38px;
+}
+
+.business-hero-trust {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 28px;
+
+    color: var(--business-muted);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.trust-dot {
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--business-orange);
+
+    box-shadow:
+        0 0 0 6px rgba(255, 122, 0, 0.10);
+}
+
+/* =========================================================
+   HERO VISUAL
+   ========================================================= */
+
+.business-hero-visual {
+    position: relative;
+
+    min-height: 520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.business-visual-orbit {
+    position: absolute;
+
+    border: 1px solid rgba(91, 33, 182, 0.14);
+
+    border-radius: 50%;
+}
+
+.business-visual-orbit.orbit-large {
+    width: 470px;
+    height: 470px;
+}
+
+.business-visual-orbit.orbit-small {
+    width: 350px;
+    height: 350px;
+
+    border-color: rgba(255, 122, 0, 0.15);
+}
+
+/* =========================================================
+   BUSINESS DASHBOARD CARD
+   ========================================================= */
+
+.business-dashboard-card {
+    position: relative;
+
+    z-index: 5;
+
+    width: 390px;
+
+    padding: 28px;
+
+    border: 1px solid rgba(91, 33, 182, 0.10);
+
+    border-radius: 27px;
+
+    background: #ffffff;
+
+    box-shadow: var(--business-shadow-hover);
+}
+
+.dashboard-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.dashboard-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--business-orange);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+}
+
+.dashboard-card-header strong {
+    display: block;
+
+    max-width: 250px;
+
+    color: var(--business-black);
+
+    font-size: 18px;
+
+    line-height: 1.25;
+}
+
+.dashboard-status {
+    width: 10px;
+    height: 10px;
+
+    flex-shrink: 0;
+
+    margin-top: 4px;
+
+    border-radius: 50%;
+
+    background: var(--business-orange);
+}
+
+/* =========================================================
+   DASHBOARD STATS
+   ========================================================= */
+
+.dashboard-stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 9px;
+
+    margin-top: 24px;
+}
+
+.dashboard-stat {
+    padding: 13px 10px;
+
+    border-radius: 13px;
+
+    background: #f7f4fb;
+}
+
+.dashboard-stat span {
+    display: block;
+
+    color: var(--business-muted);
+
+    font-size: 8px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.dashboard-stat strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--business-purple);
+
+    font-size: 17px;
+}
+
+/* =========================================================
+   DASHBOARD LIST
+   ========================================================= */
+
+.dashboard-list {
+    margin-top: 20px;
+
+    display: grid;
+
+    gap: 10px;
+}
+
+.dashboard-list-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    border: 1px solid var(--business-border);
+
+    border-radius: 14px;
+}
+
+.dashboard-list-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background: var(--business-purple-light);
+
+    color: var(--business-purple);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.dashboard-list-icon.orange {
+    background: var(--business-orange-light);
+
+    color: var(--business-orange);
+}
+
+.dashboard-list-content {
+    min-width: 0;
+}
+
+.dashboard-list-content strong {
+    display: block;
+
+    color: var(--business-black);
+
+    font-size: 11px;
+}
+
+.dashboard-list-content span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--business-muted);
+
+    font-size: 9px;
+}
+
+.dashboard-list-value {
+    margin-left: auto;
+
+    color: var(--business-purple);
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+/* =========================================================
+   FLOATING BUSINESS CARDS
+   ========================================================= */
+
+.business-floating-card {
+    position: absolute;
+
+    z-index: 7;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 15px;
+
+    border: 1px solid var(--business-border);
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    box-shadow: var(--business-shadow);
+}
+
+.business-floating-card.card-one {
+    top: 70px;
+    left: 0;
+}
+
+.business-floating-card.card-two {
+    right: -5px;
+    bottom: 65px;
+}
+
+.business-floating-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: var(--business-purple-light);
+
+    color: var(--business-purple);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.business-floating-icon.orange {
+    background: var(--business-orange-light);
+
+    color: var(--business-orange);
+}
+
+.business-floating-card strong {
+    display: block;
+
+    color: var(--business-black);
+
+    font-size: 11px;
+}
+
+.business-floating-card span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--business-muted);
+
+    font-size: 9px;
+}
+
+/* =========================================================
+   SECTION BASE
+   ========================================================= */
+
+.business-section {
+    position: relative;
+
+    padding: 120px 0;
+}
+
+.business-section-heading {
+    max-width: 800px;
+
+    margin-bottom: 70px;
+}
+
+.business-section-heading.centered {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+.business-section-heading.centered .business-eyebrow {
+    justify-content: center;
+}
+
+.business-section-heading h2 {
+    margin: 0;
+
+    color: var(--business-black);
+
+    font-size: clamp(44px, 5vw, 68px);
+
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.05em;
+}
+
+.business-section-heading h2 span {
+    color: var(--business-purple);
+}
+
+.business-section-heading p {
+    max-width: 650px;
+
+    margin: 24px 0 0;
+
+    font-size: 17px;
+}
+
+.business-section-heading.centered p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================================
+   BUSINESS VALUE
+   ========================================================= */
+
+.business-value-section {
+    background: #ffffff;
+}
+
+.business-value-heading {
+    display: grid;
+
+    grid-template-columns: 1fr 0.7fr;
+
+    align-items: end;
+
+    gap: 70px;
+
+    max-width: none;
+}
+
+.business-value-heading p {
+    margin-bottom: 5px;
+}
+
+.business-value-grid {
+    display: grid;
+
+    grid-template-columns: 1.1fr 1fr 1fr;
+
+    gap: 24px;
+}
+
+.business-value-card {
+    position: relative;
+
+    min-height: 390px;
+
+    padding: 38px;
+
+    border: 1px solid var(--business-border);
+
+    border-radius: var(--business-radius);
+
+    background: #ffffff;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.business-value-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(91, 33, 182, 0.18);
+
+    box-shadow: var(--business-shadow-hover);
+}
+
+.business-value-card.featured {
+    background:
+        linear-gradient(
+            145deg,
+            var(--business-purple-deep),
+            var(--business-purple)
+        );
+
+    border-color: transparent;
+}
+
+.business-card-number {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    color: rgba(91, 33, 182, 0.10);
+
+    font-size: 60px;
+
+    font-weight: 800;
+}
+
+.business-value-card.featured .business-card-number {
+    color: rgba(255, 255, 255, 0.08);
+}
+
+.business-card-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 55px;
+
+    border-radius: 16px;
+
+    background: var(--business-purple-light);
+
+    color: var(--business-purple);
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.business-card-icon.orange {
+    background: var(--business-orange-light);
+
+    color: var(--business-orange);
+}
+
+.business-value-card.featured .business-card-icon {
+    background: rgba(255, 255, 255, 0.12);
+
+    color: var(--business-orange);
+}
+
+.business-card-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--business-orange);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+.business-value-card h3 {
+    margin: 0;
+
+    max-width: 320px;
+
+    color: var(--business-black);
+
+    font-size: 28px;
+
+    line-height: 1.15;
+}
+
+.business-value-card.featured h3 {
+    color: #ffffff;
+}
+
+.business-value-card p {
+    max-width: 330px;
+
+    margin: 15px 0 0;
+
+    font-size: 14px;
+}
+
+.business-value-card.featured p {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.business-text-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 25px;
+
+    color: var(--business-purple);
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.business-text-link span {
+    transition: transform 0.2s ease;
+}
+
+.business-text-link:hover span {
+    transform: translateX(4px);
+}
+
+.business-value-card.featured .business-text-link {
+    color: var(--business-orange);
+}
+
+/* =========================================================
+   BUSINESS CATEGORIES
+   ========================================================= */
+
+.business-categories-section {
+    background: #faf8fd;
+}
+
+.business-categories {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.business-category {
+    position: relative;
+
+    min-height: 230px;
+
+    padding: 30px;
+
+    border: 1px solid var(--business-border);
+
+    border-radius: var(--business-radius);
+
+    background: #ffffff;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.business-category:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(91, 33, 182, 0.20);
+
+    box-shadow: var(--business-shadow);
+}
+
+.business-category-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 35px;
+
+    border-radius: 14px;
+
+    background: var(--business-purple-light);
+
+    color: var(--business-purple);
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.business-category:nth-child(even)
+.business-category-icon {
+    background: var(--business-orange-light);
+
+    color: var(--business-orange);
+}
+
+.business-category h3 {
+    margin: 0;
+
+    color: var(--business-black);
+
+    font-size: 20px;
+}
+
+.business-category p {
+    margin: 10px 0 0;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+/* =========================================================
+   GROWTH SECTION
+   ========================================================= */
+
+.business-growth-section {
+    background: #ffffff;
+}
+
+.business-growth-layout {
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    align-items: center;
+
+    gap: 100px;
+}
+
+.business-growth-visual {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.growth-circle {
+    position: absolute;
+
+    border: 1px solid rgba(91, 33, 182, 0.14);
+
+    border-radius: 50%;
+}
+
+.growth-circle.circle-one {
+    width: 450px;
+    height: 450px;
+}
+
+.growth-circle.circle-two {
+    width: 310px;
+    height: 310px;
+
+    border-color: rgba(255, 122, 0, 0.15);
+}
+
+.growth-center {
+    position: relative;
+
+    z-index: 4;
+
+    width: 190px;
+    height: 190px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--business-purple),
+            var(--business-purple-deep)
+        );
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 70px rgba(91, 33, 182, 0.28);
+}
+
+.growth-center span {
+    color: rgba(255, 255, 255, 0.60);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+.growth-center strong {
+    margin-top: 5px;
+
+    color: #ffffff;
+
+    font-size: 28px;
+}
+
+.growth-center small {
+    margin-top: 6px;
+
+    color: var(--business-orange);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.growth-tag {
+    position: absolute;
+
+    z-index: 5;
+
+    padding: 9px 14px;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+
+    color: var(--business-purple);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    box-shadow: var(--business-shadow);
+}
+
+.growth-tag.tag-one {
+    top: 60px;
+    left: 30px;
+}
+
+.growth-tag.tag-two {
+    top: 125px;
+    right: 15px;
+
+    color: var(--business-orange);
+}
+
+.growth-tag.tag-three {
+    bottom: 80px;
+    left: 15px;
+}
+
+.growth-tag.tag-four {
+    right: 35px;
+    bottom: 60px;
+
+    color: var(--business-orange);
+}
+
+.business-growth-content {
+    max-width: 680px;
+}
+
+.business-growth-content h2 {
+    margin: 0;
+
+    color: var(--business-black);
+
+    font-size: clamp(44px, 5vw, 68px);
+
+    line-height: 1.03;
+
+    letter-spacing: -0.05em;
+}
+
+.business-growth-content h2 span {
+    color: var(--business-purple);
+}
+
+.business-large-copy {
+    font-size: 18px !important;
+
+    line-height: 1.75 !important;
+}
+
+.business-growth-points {
+    margin-top: 35px;
+
+    display: grid;
+
+    gap: 20px;
+}
+
+.business-growth-point {
+    display: grid;
+
+    grid-template-columns: 40px 1fr;
+
+    gap: 15px;
+
+    align-items: start;
+}
+
+.growth-number {
+    color: var(--business-orange);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    padding-top: 4px;
+}
+
+.business-growth-point strong {
+    display: block;
+
+    color: var(--business-black);
+
+    font-size: 14px;
+}
+
+.business-growth-point span:not(.growth-number) {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--business-muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+/* =========================================================
+   BUSINESS CONNECTION
+   ========================================================= */
+
+.business-connect-section {
+    background: #faf8fd;
+}
+
+.business-connect-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 0.9fr;
+
+    align-items: center;
+
+    gap: 100px;
+}
+
+.business-connect-content {
+    max-width: 650px;
+}
+
+.business-connect-content h2 {
+    margin: 0;
+
+    color: var(--business-black);
+
+    font-size: clamp(44px, 5vw, 66px);
+
+    line-height: 1.04;
+
+    letter-spacing: -0.05em;
+}
+
+.business-connect-content h2 span {
+    color: var(--business-purple);
+}
+
+.business-connect-content > p {
+    margin-top: 25px;
+}
+
+.business-feature-list {
+    margin-top: 35px;
+
+    display: grid;
+
+    gap: 20px;
+}
+
+.business-feature {
+    display: grid;
+
+    grid-template-columns: 42px 1fr;
+
+    gap: 15px;
+}
+
+.business-feature-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: var(--business-purple-light);
+
+    color: var(--business-purple);
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.business-feature-icon.orange {
+    background: var(--business-orange-light);
+
+    color: var(--business-orange);
+}
+
+.business-feature strong {
+    display: block;
+
+    color: var(--business-black);
+
+    font-size: 14px;
+}
+
+.business-feature span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--business-muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+/* =========================================================
+   CONNECTION VISUAL
+   ========================================================= */
+
+.business-connect-visual {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.business-network-card {
+    width: 380px;
+
+    padding: 30px;
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--business-purple-deep),
+            var(--business-purple)
+        );
+
+    box-shadow:
+        0 35px 80px rgba(91, 33, 182, 0.25);
+}
+
+.network-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+.network-status {
+    padding: 5px 8px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    color: var(--business-orange);
+
+    font-size: 8px;
+}
+
+.network-business {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 35px;
+
+    padding: 15px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.network-avatar {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: #ffffff;
+
+    font-weight: 800;
+}
+
+.network-business strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 12px;
+}
+
+.network-business span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 9px;
+}
+
+.network-line {
+    position: relative;
+
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.network-line div {
+    width: 1px;
+    height: 55px;
+
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.network-line span {
+    position: absolute;
+
+    top: 4px;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+}
+
+.network-line span.orange {
+    top: auto;
+    bottom: 4px;
+
+    background: var(--business-orange);
+}
+
+.network-customer {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 15px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.network-customer .network-avatar {
+    background: var(--business-orange);
+}
+
+.network-customer strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 12px;
+}
+
+.network-customer span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 9px;
+}
+
+.network-footer {
+    margin-top: 28px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+/* =========================================================
+   HOW IT WORKS
+   ========================================================= */
+
+.business-how-section {
+    background: #ffffff;
+}
+
+.business-journey {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+}
+
+.business-journey-line {
+    position: absolute;
+
+    top: 65px;
+
+    left: 10%;
+    right: 10%;
+
+    height: 1px;
+
+    background: var(--business-border);
+}
+
+.business-journey-step {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+.business-journey-number {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: var(--business-orange);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+.business-journey-icon {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 25px;
+
+    border: 1px solid var(--business-border);
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    color: var(--business-purple);
+
+    font-size: 18px;
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 30px rgba(45, 17, 87, 0.06);
+}
+
+.business-journey-icon.orange {
+    background: var(--business-orange-light);
+
+    color: var(--business-orange);
+}
+
+.business-journey-step h3 {
+    margin: 0;
+
+    color: var(--business-black);
+
+    font-size: 21px;
+}
+
+.business-journey-step p {
+    max-width: 220px;
+
+    margin: 10px auto 0;
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   BUSINESS EXPERIENCE PANEL
+   ========================================================= */
+
+.business-experience {
+    padding: 120px 0;
+
+    background: #ffffff;
+}
+
+.business-experience-panel {
+    position: relative;
+
+    min-height: 560px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    padding: 80px;
+
+    border-radius: var(--business-radius-lg);
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 122, 0, 0.12),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            var(--business-purple-deep),
+            var(--business-purple)
+        );
+
+    overflow: hidden;
+}
+
+.business-experience-content {
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 600px;
+}
+
+.business-experience-content h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(45px, 5vw, 68px);
+
+    line-height: 1;
+
+    letter-spacing: -0.05em;
+}
+
+.business-experience-content h2 span {
+    color: var(--business-orange);
+}
+
+.business-experience-content p {
+    max-width: 550px;
+
+    margin: 25px 0 0;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 17px;
+}
+
+.business-experience-actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+/* =========================================================
+   EXPERIENCE VISUAL
+   ========================================================= */
+
+.business-experience-visual {
+    position: relative;
+
+    min-height: 360px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.business-experience-path {
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border: 1px dashed rgba(255, 255, 255, 0.20);
+
+    border-radius: 50%;
+}
+
+.business-experience-step {
+    position: absolute;
+
+    z-index: 3;
+
+    width: 110px;
+
+    padding: 12px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+.business-experience-step span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--business-orange);
+
+    font-size: 9px;
+}
+
+.business-step-one {
+    top: 15px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.business-step-two {
+    right: 10px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+.business-step-three {
+    bottom: 10px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.business-step-four {
+    left: 10px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.business-final-cta {
+    position: relative;
+
+    padding: 125px 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(255, 122, 0, 0.14),
+            transparent 27%
+        ),
+
+        var(--business-purple-deep);
+
+    overflow: hidden;
+}
+
+.business-cta-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -250px;
+    top: -200px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+}
+
+.business-final-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.business-final-content .business-eyebrow {
+    justify-content: center;
+}
+
+.business-final-content h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(48px, 6vw, 76px);
+
+    line-height: 1;
+
+    letter-spacing: -0.055em;
+}
+
+.business-final-content h2 span {
+    color: var(--business-orange);
+}
+
+.business-final-content p {
+    max-width: 650px;
+
+    margin: 28px auto 0;
+
+    color: rgba(255, 255, 255, 0.70);
+
+    font-size: 17px;
+}
+
+.business-final-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    margin-top: 40px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.businesses-page .site-footer {
+    background: #130727;
+
+    color: #ffffff;
+}
+
+.businesses-page .footer-main {
+    display: grid;
+
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+
+    gap: 50px;
+
+    padding: 75px 0 65px;
+}
+
+.businesses-page .footer-brand .brand-name {
+    color: #ffffff;
+}
+
+.businesses-page .footer-brand p {
+    max-width: 270px;
+
+    margin-top: 18px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 14px;
+}
+
+.businesses-page .footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.businesses-page .footer-column h4 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+}
+
+.businesses-page .footer-column a {
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 13px;
+
+    transition:
+        color 0.2s ease;
+}
+
+.businesses-page .footer-column a:hover {
+    color: var(--business-orange);
+}
+
+.businesses-page .footer-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 22px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.businesses-page .footer-bottom p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.40);
+
+    font-size: 12px;
+}
+
+.businesses-page .footer-legal {
+    display: flex;
+
+    gap: 25px;
+}
+
+.businesses-page .footer-legal a {
+    color: rgba(255, 255, 255, 0.40);
+
+    font-size: 12px;
+
+    transition: color 0.2s ease;
+}
+
+.businesses-page .footer-legal a:hover {
+    color: var(--business-orange);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .businesses-page .main-navigation {
+        gap: 16px;
+    }
+
+    .businesses-page .nav-link {
+        font-size: 12px;
+    }
+
+    .business-hero-container {
+        gap: 50px;
+    }
+
+    .business-hero h1 {
+        font-size: clamp(54px, 7vw, 78px);
+    }
+
+    .business-value-heading {
+        gap: 50px;
+    }
+
+    .business-growth-layout,
+    .business-connect-layout {
+        gap: 60px;
+    }
+
+    .business-experience-panel {
+        padding: 65px;
+    }
+
+    .business-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .businesses-page .footer-main {
+        grid-template-columns: 1.4fr repeat(3, 1fr);
+
+        gap: 30px;
+    }
+}
+
+/* =========================================================
+   MOBILE NAVIGATION / TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .businesses-page .mobile-menu-toggle {
+        display: block;
+    }
+
+    .businesses-page .main-navigation {
+        position: absolute;
+
+        top: 82px;
+
+        left: 0;
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        margin-left: 0;
+
+        padding: 25px 24px;
+
+        border-bottom: 1px solid var(--business-border);
+
+        background: #ffffff;
+
+        box-shadow: var(--business-shadow);
+    }
+
+    .businesses-page .main-navigation.open {
+        display: flex;
+    }
+
+    .businesses-page .nav-link {
+        padding: 12px 0;
+    }
+
+    .businesses-page .nav-link::after {
+        display: none;
+    }
+
+    .businesses-page .nav-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+
+        margin: 10px 0 0;
+    }
+
+    .businesses-page .nav-actions .btn {
+        width: 100%;
+    }
+
+    /* HERO */
+
+    .business-hero {
+        min-height: auto;
+
+        padding: 90px 0;
+    }
+
+    .business-hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 65px;
+    }
+
+    .business-hero-content {
+        max-width: 760px;
+    }
+
+    .business-hero-visual {
+        min-height: 450px;
+    }
+
+    /* VALUE */
+
+    .business-value-heading {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .business-value-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .business-value-card {
+        min-height: 320px;
+    }
+
+    /* GROWTH */
+
+    .business-growth-layout {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .business-growth-visual {
+        min-height: 430px;
+
+        order: 2;
+    }
+
+    .business-growth-content {
+        max-width: 750px;
+    }
+
+    /* CONNECTION */
+
+    .business-connect-layout {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .business-connect-content {
+        max-width: 750px;
+    }
+
+    .business-connect-visual {
+        min-height: 430px;
+    }
+
+    /* EXPERIENCE */
+
+    .business-experience-panel {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 60px;
+    }
+
+    .business-experience-visual {
+        min-height: 350px;
+    }
+
+    /* HOW */
+
+    .business-journey {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 45px 25px;
+    }
+
+    .business-journey-line {
+        display: none;
+    }
+
+    /* FOOTER */
+
+    .businesses-page .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .businesses-page .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .businesses-page .container {
+        width: min(
+            calc(100% - 36px),
+            var(--business-container)
+        );
+    }
+
+    .business-section {
+        padding: 75px 0;
+    }
+
+    /* HERO */
+
+    .business-hero {
+        padding: 75px 0 85px;
+    }
+
+    .business-hero h1 {
+        font-size: clamp(48px, 14vw, 65px);
+    }
+
+    .business-hero-content > p {
+        margin-top: 24px;
+
+        font-size: 16px;
+    }
+
+    .business-hero-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .business-hero-actions .btn {
+        width: 100%;
+    }
+
+    .business-hero-visual {
+        min-height: 350px;
+    }
+
+    .business-visual-orbit.orbit-large {
+        width: 320px;
+        height: 320px;
+    }
+
+    .business-visual-orbit.orbit-small {
+        width: 245px;
+        height: 245px;
+    }
+
+    .business-dashboard-card {
+        width: min(100%, 340px);
+
+        padding: 22px;
+    }
+
+    .business-floating-card.card-one {
+        top: 25px;
+
+        left: -5px;
+    }
+
+    .business-floating-card.card-two {
+        right: -5px;
+
+        bottom: 20px;
+    }
+
+    /* HEADINGS */
+
+    .business-section-heading {
+        margin-bottom: 45px;
+    }
+
+    .business-section-heading h2,
+    .business-value-heading h2,
+    .business-growth-content h2,
+    .business-connect-content h2 {
+        font-size: 42px;
+    }
+
+    /* CATEGORIES */
+
+    .business-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .business-category {
+        min-height: auto;
+
+        padding: 30px;
+    }
+
+    /* GROWTH */
+
+    .business-growth-visual {
+        min-height: 340px;
+    }
+
+    .growth-circle.circle-one {
+        width: 310px;
+        height: 310px;
+    }
+
+    .growth-circle.circle-two {
+        width: 230px;
+        height: 230px;
+    }
+
+    .growth-center {
+        width: 150px;
+        height: 150px;
+    }
+
+    .growth-center strong {
+        font-size: 22px;
+    }
+
+    .growth-tag.tag-one {
+        top: 25px;
+
+        left: 0;
+    }
+
+    .growth-tag.tag-two {
+        top: 70px;
+
+        right: 0;
+    }
+
+    .growth-tag.tag-three {
+        bottom: 35px;
+
+        left: 0;
+    }
+
+    .growth-tag.tag-four {
+        right: 5px;
+
+        bottom: 20px;
+    }
+
+    /* CONNECTION */
+
+    .business-network-card {
+        width: min(100%, 360px);
+
+        padding: 25px;
+    }
+
+    /* EXPERIENCE */
+
+    .business-experience {
+        padding: 75px 0;
+    }
+
+    .business-experience-panel {
+        padding: 45px 30px;
+
+        border-radius: 25px;
+    }
+
+    .business-experience-content h2 {
+        font-size: 42px;
+    }
+
+    .business-experience-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .business-experience-actions .btn {
+        width: 100%;
+    }
+
+    .business-experience-visual {
+        min-height: 300px;
+    }
+
+    .business-experience-path {
+        width: 220px;
+        height: 220px;
+    }
+
+    .business-experience-step {
+        width: 90px;
+
+        font-size: 9px;
+    }
+
+    .business-step-one {
+        top: 5px;
+    }
+
+    .business-step-two {
+        right: 0;
+    }
+
+    .business-step-three {
+        bottom: 0;
+    }
+
+    .business-step-four {
+        left: 0;
+    }
+
+    /* JOURNEY */
+
+    .business-journey {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .business-journey-step {
+        text-align: left;
+
+        display: grid;
+
+        grid-template-columns: 60px 1fr;
+
+        column-gap: 15px;
+
+        align-items: center;
+    }
+
+    .business-journey-number {
+        grid-row: span 2;
+
+        margin: 0;
+
+        text-align: center;
+    }
+
+    .business-journey-icon {
+        grid-column: 2;
+
+        margin: 0 0 12px;
+
+        width: 55px;
+        height: 55px;
+    }
+
+    .business-journey-step h3 {
+        grid-column: 2;
+    }
+
+    .business-journey-step p {
+        grid-column: 2;
+
+        max-width: none;
+
+        margin: 7px 0 0;
+    }
+
+    /* FINAL CTA */
+
+    .business-final-cta {
+        padding: 85px 0;
+    }
+
+    .business-final-content h2 {
+        font-size: 45px;
+    }
+
+    .business-final-content p {
+        font-size: 16px;
+    }
+
+    .business-final-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .business-final-actions .btn {
+        width: 100%;
+    }
+
+    /* FOOTER */
+
+    .businesses-page .footer-main {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px 25px;
+
+        padding: 55px 0;
+    }
+
+    .businesses-page .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .businesses-page .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .businesses-page .footer-legal {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .businesses-page .container {
+        width: calc(100% - 30px);
+    }
+
+    .business-hero h1 {
+        font-size: 46px;
+    }
+
+    .business-hero-visual {
+        min-height: 300px;
+    }
+
+    .business-visual-orbit.orbit-large {
+        width: 260px;
+        height: 260px;
+    }
+
+    .business-visual-orbit.orbit-small {
+        width: 205px;
+        height: 205px;
+    }
+
+    .business-dashboard-card {
+        width: 285px;
+
+        padding: 18px;
+    }
+
+    .dashboard-card-header strong {
+        font-size: 15px;
+    }
+
+    .dashboard-stats {
+        gap: 6px;
+    }
+
+    .dashboard-stat {
+        padding: 10px 7px;
+    }
+
+    .dashboard-stat strong {
+        font-size: 14px;
+    }
+
+    .business-floating-card {
+        padding: 9px 11px;
+    }
+
+    .business-floating-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .business-floating-card.card-one {
+        left: -10px;
+    }
+
+    .business-floating-card.card-two {
+        right: -10px;
+    }
+
+    .business-section-heading h2,
+    .business-value-heading h2,
+    .business-growth-content h2,
+    .business-connect-content h2 {
+        font-size: 38px;
+    }
+
+    .business-large-copy {
+        font-size: 16px !important;
+    }
+
+    /* GROWTH */
+
+    .business-growth-visual {
+        min-height: 290px;
+    }
+
+    .growth-circle.circle-one {
+        width: 250px;
+        height: 250px;
+    }
+
+    .growth-circle.circle-two {
+        width: 180px;
+        height: 180px;
+    }
+
+    .growth-center {
+        width: 125px;
+        height: 125px;
+    }
+
+    .growth-center strong {
+        font-size: 18px;
+    }
+
+    .growth-center small {
+        font-size: 8px;
+    }
+
+    .growth-tag {
+        padding: 7px 10px;
+
+        font-size: 8px;
+    }
+
+    /* CONNECTION */
+
+    .business-network-card {
+        padding: 20px;
+    }
+
+    /* EXPERIENCE */
+
+    .business-experience-panel {
+        padding: 40px 25px;
+    }
+
+    .business-experience-content h2 {
+        font-size: 38px;
+    }
+
+    .business-experience-visual {
+        min-height: 260px;
+    }
+
+    .business-experience-path {
+        width: 180px;
+        height: 180px;
+    }
+
+    .business-experience-step {
+        width: 78px;
+
+        padding: 9px 6px;
+
+        font-size: 8px;
+    }
+
+    /* CTA */
+
+    .business-final-content h2 {
+        font-size: 40px;
+    }
+
+    /* FOOTER */
+
+    .businesses-page .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .businesses-page .footer-brand {
+        grid-column: auto;
+    }
+}
