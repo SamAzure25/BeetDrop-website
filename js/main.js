@@ -1,8 +1,3 @@
-/* =========================================================
-   BEETDROP WEBSITE
-   Main JavaScript
-========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const menuToggle = document.getElementById("mobileMenuToggle");
@@ -12,22 +7,60 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    menuToggle.addEventListener("click", () => {
 
-        const isOpen = navigation.classList.toggle("open");
+    /* =====================================================
+       OPEN / CLOSE NAVIGATION
+    ===================================================== */
+
+    const closeMenu = () => {
+
+        navigation.classList.remove("open");
+
+        menuToggle.classList.remove("active");
 
         menuToggle.setAttribute(
             "aria-expanded",
-            isOpen.toString()
+            "false"
         );
+
+        document.body.classList.remove("menu-open");
+    };
+
+
+    const openMenu = () => {
+
+        navigation.classList.add("open");
+
+        menuToggle.classList.add("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        document.body.classList.add("menu-open");
+    };
+
+
+    menuToggle.addEventListener("click", (event) => {
+
+        event.stopPropagation();
+
+        const isOpen =
+            navigation.classList.contains("open");
+
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
 
     });
 
 
-    /*
-     * Close the mobile navigation after
-     * selecting a navigation link.
-     */
+    /* =====================================================
+       CLOSE WHEN NAVIGATION LINK IS CLICKED
+    ===================================================== */
 
     const navigationLinks =
         navigation.querySelectorAll(".nav-link");
@@ -35,16 +68,75 @@ document.addEventListener("DOMContentLoaded", () => {
     navigationLinks.forEach((link) => {
 
         link.addEventListener("click", () => {
-
-            navigation.classList.remove("open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
+            closeMenu();
         });
 
     });
+
+
+    /* =====================================================
+       CLOSE WHEN CLICKING OUTSIDE
+    ===================================================== */
+
+    document.addEventListener("click", (event) => {
+
+        const clickedInsideNavigation =
+            navigation.contains(event.target);
+
+        const clickedToggle =
+            menuToggle.contains(event.target);
+
+        if (
+            !clickedInsideNavigation &&
+            !clickedToggle &&
+            navigation.classList.contains("open")
+        ) {
+            closeMenu();
+        }
+
+    });
+
+
+    /* =====================================================
+       ESCAPE KEY
+    ===================================================== */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (
+            event.key === "Escape" &&
+            navigation.classList.contains("open")
+        ) {
+            closeMenu();
+
+            menuToggle.focus();
+        }
+
+    });
+
+
+    /* =====================================================
+       RESET WHEN RETURNING TO DESKTOP
+    ===================================================== */
+
+    const handleResize = () => {
+
+        if (window.innerWidth > 760) {
+            closeMenu();
+        }
+
+    };
+
+    window.addEventListener(
+        "resize",
+        handleResize
+    );
+
+
+    /* =====================================================
+       INITIAL STATE
+    ===================================================== */
+
+    closeMenu();
 
 });
