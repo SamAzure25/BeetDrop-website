@@ -95,14 +95,22 @@ select {
 
 /* =========================================================
    HEADER
+   Same navigation behaviour as index.html
 ========================================================= */
 
 .site-header {
-    position: relative;
-    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: var(--header-height);
-    background: rgba(22, 3, 41, 0.97);
+    z-index: 1000;
+
+    background: rgba(22, 3, 41, 0.94);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 }
 
 .nav-container {
@@ -124,6 +132,11 @@ select {
     color: var(--white);
 }
 
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
 .main-navigation {
     display: flex;
     align-items: center;
@@ -132,10 +145,14 @@ select {
 
 .nav-link {
     position: relative;
+
     color: rgba(255, 255, 255, 0.72);
+
     font-size: 0.9rem;
     font-weight: 500;
-    transition: color 0.25s ease;
+
+    transition:
+        color 0.25s ease;
 }
 
 .nav-link:hover,
@@ -145,12 +162,17 @@ select {
 
 .nav-link.active::after {
     content: "";
+
     position: absolute;
     left: 0;
     right: 0;
     bottom: -9px;
+
     height: 2px;
+
     background: var(--orange-400);
+
+    border-radius: 999px;
 }
 
 .nav-actions {
@@ -169,11 +191,15 @@ select {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     min-height: 44px;
     padding: 0 20px;
+
     border-radius: 10px;
+
     font-size: 0.86rem;
     font-weight: 600;
+
     transition:
         transform 0.25s ease,
         background 0.25s ease,
@@ -191,8 +217,8 @@ select {
 }
 
 .btn-outline:hover {
-    border-color: var(--orange-400);
     color: var(--orange-300);
+    border-color: var(--orange-400);
 }
 
 .btn-primary {
@@ -206,52 +232,63 @@ select {
     border-color: var(--orange-600);
 }
 
-.btn-light {
-    color: var(--purple-900);
-    background: var(--white);
-}
-
-.btn-light:hover {
-    background: var(--orange-100);
-    color: var(--purple-900);
-}
-
-.btn-outline-light {
-    color: var(--white);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-}
-
-.btn-outline-light:hover {
-    border-color: var(--orange-400);
-    color: var(--orange-300);
-}
-
-.btn-large {
-    min-height: 52px;
-    padding-inline: 26px;
-}
-
 
 /* =========================================================
-   MOBILE MENU
+   MOBILE MENU TOGGLE
+   MATCH INDEX PAGE
 ========================================================= */
 
 .mobile-menu-toggle {
     display: none;
-    width: 42px;
-    height: 42px;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
     border: 0;
+    outline: none;
+
     background: transparent;
+
     cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
 }
 
 .mobile-menu-toggle span {
     display: block;
+
     width: 24px;
     height: 2px;
-    margin: 5px auto;
+
     background: var(--white);
-    transition: 0.25s ease;
+
+    border-radius: 2px;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+/* Hamburger → X */
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 
@@ -1323,26 +1360,41 @@ select {
     }
 
 
-    /* Header */
+    /* =====================================================
+       MOBILE HEADER
+    ===================================================== */
 
     .mobile-menu-toggle {
-        display: block;
+        display: flex;
     }
 
     .main-navigation {
-        position: absolute;
+        position: fixed;
+
         top: var(--header-height);
         left: 16px;
         right: 16px;
+
         display: none;
+
         flex-direction: column;
         align-items: stretch;
+
         gap: 0;
-        padding: 15px;
-        background: var(--purple-900);
+
+        padding: 14px;
+
+        background: rgba(33, 6, 61, 0.98);
+
         border: 1px solid rgba(255, 255, 255, 0.1);
+
         border-radius: 14px;
-        box-shadow: var(--shadow-purple);
+
+        box-shadow:
+            0 25px 60px rgba(0, 0, 0, 0.3);
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
     }
 
     .main-navigation.open {
@@ -1359,7 +1411,12 @@ select {
 
     .nav-actions {
         flex-direction: column;
+
+        width: 100%;
+
         margin: 8px 0 0;
+
+        gap: 10px;
     }
 
     .nav-actions .btn {
@@ -1367,7 +1424,9 @@ select {
     }
 
 
-    /* Hero */
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .about-hero {
         min-height: auto;
@@ -1375,7 +1434,8 @@ select {
 
     .about-hero-container {
         min-height: auto;
-        padding-top: 75px;
+
+        padding-top: 145px;
         padding-bottom: 70px;
     }
 
@@ -1426,7 +1486,9 @@ select {
     }
 
 
-    /* Story */
+    /* =====================================================
+       STORY
+    ===================================================== */
 
     .story-content h2,
     .vision-content h2,
@@ -1439,7 +1501,9 @@ select {
     }
 
 
-    /* Mission */
+    /* =====================================================
+       MISSION
+    ===================================================== */
 
     .mission-content {
         padding: 42px 28px;
@@ -1458,7 +1522,9 @@ select {
     }
 
 
-    /* Vision */
+    /* =====================================================
+       VISION
+    ===================================================== */
 
     .vision-visual {
         min-height: 320px;
@@ -1489,14 +1555,18 @@ select {
     }
 
 
-    /* Founder */
+    /* =====================================================
+       FOUNDER
+    ===================================================== */
 
     .founder-heading h2 {
         font-size: 3.1rem;
     }
 
 
-    /* Development */
+    /* =====================================================
+       DEVELOPMENT
+    ===================================================== */
 
     .development-team {
         grid-template-columns: 1fr;
@@ -1513,7 +1583,9 @@ select {
     }
 
 
-    /* CTA */
+    /* =====================================================
+       CTA
+    ===================================================== */
 
     .final-cta-box {
         padding: 45px 28px;
@@ -1524,7 +1596,9 @@ select {
     }
 
 
-    /* Footer */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     .footer-main {
         grid-template-columns: 1fr 1fr;
@@ -1545,7 +1619,6 @@ select {
         align-items: flex-start;
         gap: 15px;
     }
-
 }
 
 
