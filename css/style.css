@@ -18,13 +18,10 @@
     --purple-500: #7132cf;
     --purple-400: #8950e5;
     --purple-300: #a875ee;
-
     --purple-200: #cdb4f7;
     --purple-100: #eee7fb;
     --purple-50: #f8f5fd;
-
     /* ---------- Accent ---------- */
-
     --orange-600: #d95408;
     --orange-500: #f26722;
     --orange-400: #ff8a45;
@@ -33,10 +30,8 @@
     --orange-50: #fff8f4;
 
     /* ---------- Neutrals ---------- */
-
     --white: #ffffff;
     --black: #100b15;
-
     --gray-950: #17121d;
     --gray-900: #211c27;
     --gray-800: #302a37;
@@ -128,18 +123,15 @@ html {
 
 body {
     min-height: 100vh;
-
     overflow-x: hidden;
-
     background: var(--white);
     color: var(--gray-900);
-
     font-family: var(--font-main);
     font-size: 16px;
     line-height: 1.6;
-
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    padding-top: var(--header-height);
 }
 
 img {
@@ -185,34 +177,25 @@ ol {
 
 /* =========================================================
    4. TYPOGRAPHY
-   ========================================================= */
-
+========================================================= */
 .eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
     margin-bottom: 18px;
-
     color: var(--orange-500);
-
     font-size: 10px;
     font-weight: 800;
-
     letter-spacing: 0.18em;
     line-height: 1.2;
-
     text-transform: uppercase;
 }
 
 .eyebrow::before {
     content: "";
-
     width: 26px;
     height: 2px;
-
     flex-shrink: 0;
-
     background: currentColor;
 }
 
@@ -220,9 +203,7 @@ ol {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-
     gap: 60px;
-
     margin-bottom: 58px;
 }
 
@@ -232,38 +213,27 @@ ol {
 
 .section-heading > p {
     max-width: 500px;
-
     color: var(--gray-600);
-
     font-size: 15px;
     line-height: 1.8;
 }
-
 .section-heading h2,
 .final-cta h2 {
     max-width: 780px;
-
     color: var(--purple-950);
-
     font-size: clamp(40px, 4.3vw, 60px);
     font-weight: 800;
-
     letter-spacing: -0.055em;
     line-height: 1.04;
 }
-
 .section-heading h2 span,
 .final-cta h2 span {
     color: var(--purple-600);
 }
-
 .section-heading.centered {
     display: block;
-
     max-width: 850px;
-
     margin: 0 auto 62px;
-
     text-align: center;
 }
 
@@ -290,23 +260,15 @@ ol {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     gap: 9px;
-
     min-height: 48px;
-
     padding: 0 21px;
-
     border: 1px solid transparent;
     border-radius: 11px;
-
     font-size: 13px;
     font-weight: 750;
-
     line-height: 1;
-
     white-space: nowrap;
-
     transition:
         transform var(--transition),
         background var(--transition),
@@ -318,53 +280,37 @@ ol {
 .btn:hover {
     transform: translateY(-2px);
 }
-
 .btn-large {
     min-height: 56px;
-
     padding-inline: 27px;
-
     border-radius: 13px;
-
     font-size: 14px;
 }
-
 .btn-arrow {
     font-size: 18px;
     line-height: 0;
-
     transition: transform var(--transition);
 }
-
 .btn:hover .btn-arrow {
     transform: translateX(3px);
 }
-
 .btn-primary {
     color: var(--white);
-
     background: var(--purple-600);
-
     border-color: var(--purple-600);
-
     box-shadow: var(--shadow-purple);
 }
 
 .btn-primary:hover {
     background: var(--purple-700);
     border-color: var(--purple-700);
-
-    box-shadow:
-        0 20px 42px rgba(96, 32, 181, 0.25);
+    box-shadow: 0 20px 42px rgba(96, 32, 181, 0.25);
 }
 
 .btn-secondary {
     color: var(--white);
-
     background: var(--orange-500);
-
     border-color: var(--orange-500);
-
     box-shadow: var(--shadow-orange);
 }
 
@@ -372,77 +318,54 @@ ol {
     background: var(--orange-600);
     border-color: var(--orange-600);
 }
-
 .btn-outline {
     color: var(--purple-800);
-
     background: var(--white);
-
     border-color: var(--border-purple);
 }
-
 .btn-outline:hover {
     color: var(--purple-700);
-
     background: var(--purple-50);
-
     border-color: var(--purple-400);
-
     box-shadow: var(--shadow-sm);
 }
 
 .btn-light {
     color: var(--purple-800);
-
     background: var(--white);
-
     border-color: var(--white);
-
     box-shadow:
         0 14px 32px rgba(0, 0, 0, 0.14);
 }
 
 .btn-light:hover {
     color: var(--white);
-
     background: var(--orange-500);
-
     border-color: var(--orange-500);
 }
-
 
 /* =========================================================
    6. HEADER
    ========================================================= */
-
 .site-header {
     position: fixed;
-
     top: 0;
     right: 0;
     left: 0;
-
     z-index: 1000;
-
     height: var(--header-height);
-
-    background:
-        rgba(23, 5, 45, 0.88);
-
+    background: rgba(23, 5, 45, 0.88);
     border-bottom:
         1px solid rgba(255, 255, 255, 0.08);
-
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 }
 
 .nav-container {
     height: var(--header-height);
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 30px;
 }
 

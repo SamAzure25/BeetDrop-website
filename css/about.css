@@ -15,16 +15,13 @@
     --purple-300: #ad7bed;
     --purple-200: #cfb8f5;
     --purple-100: #eee7fb;
-
     --orange-600: #d95408;
     --orange-500: #f26722;
     --orange-400: #ff8a45;
     --orange-300: #ffad7c;
     --orange-100: #fff0e8;
-
     --white: #ffffff;
     --black: #100914;
-
     --gray-100: #f4f0f7;
     --gray-200: #e5deea;
     --gray-300: #cfc5d6;
@@ -32,22 +29,17 @@
     --gray-500: #817587;
     --gray-600: #62586a;
     --gray-700: #483f51;
-
     --container-width: 1240px;
     --header-height: 80px;
-
     --radius-sm: 12px;
     --radius-md: 20px;
     --radius-lg: 32px;
-
     --shadow-purple: 0 25px 70px rgba(30, 5, 55, 0.22);
 }
-
 
 /* =========================================================
    RESET
 ========================================================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -70,28 +62,23 @@ img {
     max-width: 100%;
     display: block;
 }
-
 a {
     text-decoration: none;
     color: inherit;
 }
-
 button,
 input,
 textarea,
 select {
     font: inherit;
 }
-
 .container {
     width: min(100% - 48px, var(--container-width));
     margin-inline: auto;
 }
-
 .section {
     padding: 120px 0;
 }
-
 
 /* =========================================================
    HEADER
@@ -105,26 +92,21 @@ select {
     width: 100%;
     height: var(--header-height);
     z-index: 1000;
-
     background: rgba(22, 3, 41, 0.94);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 }
-
 .nav-container {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 .brand {
     display: inline-flex;
     align-items: center;
 }
-
 .brand-name {
     font-size: 1.55rem;
     font-weight: 700;
@@ -132,49 +114,36 @@ select {
     color: var(--white);
 }
 
-
 /* =========================================================
    DESKTOP NAVIGATION
 ========================================================= */
-
 .main-navigation {
     display: flex;
     align-items: center;
     gap: 34px;
 }
-
 .nav-link {
     position: relative;
-
     color: rgba(255, 255, 255, 0.72);
-
     font-size: 0.9rem;
     font-weight: 500;
-
     transition:
         color 0.25s ease;
 }
-
 .nav-link:hover,
 .nav-link.active {
     color: var(--white);
 }
-
 .nav-link.active::after {
     content: "";
-
     position: absolute;
     left: 0;
     right: 0;
     bottom: -9px;
-
     height: 2px;
-
     background: var(--orange-400);
-
     border-radius: 999px;
 }
-
 .nav-actions {
     display: flex;
     align-items: center;
@@ -182,120 +151,88 @@ select {
     margin-left: 10px;
 }
 
-
 /* =========================================================
    BUTTONS
 ========================================================= */
-
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     min-height: 44px;
     padding: 0 20px;
-
     border-radius: 10px;
-
     font-size: 0.86rem;
     font-weight: 600;
-
     transition:
         transform 0.25s ease,
         background 0.25s ease,
         border-color 0.25s ease,
         color 0.25s ease;
 }
-
 .btn:hover {
     transform: translateY(-2px);
 }
-
 .btn-outline {
     color: var(--white);
     border: 1px solid rgba(255, 255, 255, 0.25);
 }
-
 .btn-outline:hover {
     color: var(--orange-300);
     border-color: var(--orange-400);
 }
-
 .btn-primary {
     color: var(--white);
     background: var(--orange-500);
     border: 1px solid var(--orange-500);
 }
-
 .btn-primary:hover {
     background: var(--orange-600);
     border-color: var(--orange-600);
 }
 
-
 /* =========================================================
    MOBILE MENU TOGGLE
    MATCH INDEX PAGE
 ========================================================= */
-
 .mobile-menu-toggle {
     display: none;
-
     width: 44px;
     height: 44px;
-
     padding: 0;
-
     border: 0;
     outline: none;
-
     background: transparent;
-
     cursor: pointer;
-
     align-items: center;
     justify-content: center;
-
     flex-direction: column;
-
     gap: 5px;
 }
-
 .mobile-menu-toggle span {
     display: block;
-
     width: 24px;
     height: 2px;
-
     background: var(--white);
-
     border-radius: 2px;
-
     transition:
         transform 0.25s ease,
         opacity 0.25s ease;
 }
 
-
 /* Hamburger → X */
-
 .mobile-menu-toggle.active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
-
 .mobile-menu-toggle.active span:nth-child(2) {
     opacity: 0;
 }
-
 .mobile-menu-toggle.active span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-
 /* =========================================================
    EYEBROW / LABELS
 ========================================================= */
-
 .eyebrow,
 .section-label {
     display: inline-flex;
@@ -307,26 +244,22 @@ select {
     letter-spacing: 0.18em;
     text-transform: uppercase;
 }
-
 .section-label::before {
     content: "";
     width: 24px;
     height: 2px;
     background: var(--orange-500);
 }
-
 .section-label.light {
     color: var(--orange-300);
 }
 
-
 /* =========================================================
    ABOUT HERO
 ========================================================= */
-
 .about-hero {
     position: relative;
-    min-height: calc(100vh - var(--header-height));
+    min-height: 100vh;
     display: flex;
     align-items: center;
     overflow: hidden;
